@@ -2,12 +2,10 @@ package beans.factory.support;
 
 import beans.BeansException;
 import beans.factory.FactoryBean;
-import beans.factory.ObjectFactory;
 import beans.factory.config.BeanDefinition;
 import beans.factory.config.BeanPostProcessor;
 import beans.factory.config.ConfigurableBeanFactory;
 import core.ConversionService;
-import jdk.nashorn.internal.runtime.regexp.JoniRegExp;
 import util.StringValueResolver;
 
 import java.util.ArrayList;
@@ -27,32 +25,36 @@ public abstract class AbstractBeanFactory extends DefaultSingletonBeanRegistry i
 
     @Override
     public void addBeanPostProcessor(BeanPostProcessor beanPostProcessor) {
-
+       this.beanPostProcessors.remove(beanPostProcessor);
+       this.beanPostProcessors.add(beanPostProcessor);
     }
 
-    @Override
-    public void destroySingletons() {
-
+    public List<BeanPostProcessor> getBeanPostProcessors() {
+        return this.beanPostProcessors;
     }
 
     @Override
     public void addEmbeddedValueResolver(StringValueResolver valueResolver) {
-
+        this.embeddedValueResolvers.add(valueResolver);
     }
 
     @Override
     public String resolveEmbeddedValue(String value) {
-        return "";
+        String result = value;
+        for(StringValueResolver resolver : this.embeddedValueResolvers) {
+            result=resolver.resolveStringValue(result);
+        }
+        return result;
     }
 
     @Override
     public void setConversionService(ConversionService conversionService) {
-
+        this.conversionService = conversionService;
     }
 
     @Override
     public ConversionService getConversionService() {
-        return null;
+        return conversionService;
     }
 
     @Override
@@ -93,16 +95,14 @@ public abstract class AbstractBeanFactory extends DefaultSingletonBeanRegistry i
 
     @Override
     public <T> T getBean(String name, Class<T> requiredType) throws BeansException {
-        return null;
+        return ((T)getBean(name));
     }
 
-    @Override
-    public <T> T getBean(Class<T> requiredType) throws BeansException {
-        return null;
-    }
 
     @Override
     public boolean containsBean(String name) {
-        return false;
+        return containsBeanDefinition(name);
     }
+
+    protected abstract boolean containsBeanDefinition(String beanName);
 }
