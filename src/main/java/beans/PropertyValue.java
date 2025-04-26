@@ -1,6 +1,5 @@
 package beans;
 
-import com.sun.org.apache.xerces.internal.impl.xpath.XPath;
 
 public class PropertyValue {
     private final String name;
