@@ -38,6 +38,7 @@ public class DefaultListableBeanFactoryTest extends TestCase {
         PropertyValues propertyValues = new PropertyValues();
         propertyValues.addPropertyValue(new PropertyValue("color","蓝"));
         propertyValues.addPropertyValue(new PropertyValue("engine","小米"));
+        propertyValues.addPropertyValue(new PropertyValue("person",new BeanReference("person")));
         BeanDefinition beanDefinitionCar=new BeanDefinition(Car.class,propertyValues);
 
         propertyValues = new PropertyValues();
@@ -60,13 +61,19 @@ class Person {
     private String love;
     private Car car;
     public void info() {
-        System.out.println(name+" "+age+" "+love+" "+car.getColor()+" "+car.getEngine());
+        System.out.println(name+" "+age+" "+love+" "+car.getColor()+" "+car.getEngine()+" "+car.getPerson().love);
     }
 }
 
 class Car {
     private String color;
     private String engine;
+
+    public Person getPerson() {
+        return person;
+    }
+
+    private Person person;
     public String getColor() {
         return color;
     }

@@ -7,7 +7,8 @@ import beans.factory.config.BeanDefinition;
 import java.util.*;
 import java.util.concurrent.ConcurrentHashMap;
 
-public class DefaultListableBeanFactory extends AbstractAutowireCapableBeanFactory implements ConfigurableListableBeanFactory,BeanDefinitionRegistry {
+public class DefaultListableBeanFactory extends AbstractAutowireCapableBeanFactory implements ConfigurableListableBeanFactory,
+        BeanDefinitionRegistry {
 
     private  Map<String,BeanDefinition> beanDefinitionMap =new ConcurrentHashMap<>(256);
 
