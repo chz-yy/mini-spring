@@ -4,18 +4,19 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="711a23af-67dc-42df-a75a-ca6970f8c0bc" name="更改" comment="代理bean实现和创建bean时可以引用其他bean对象">
-      <change afterPath="$PROJECT_DIR$/src/main/java/core/io/ClassPathResource.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/core/io/DefaultResourceLoader.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/core/io/FileSystemResource.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/core/io/Resource.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/core/io/ResourceLoader.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/core/io/UrlResource.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/hello.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/core/io/DefaultResourceLoaderTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/resources/hello.txt" afterDir="false" />
+    <list default="true" id="711a23af-67dc-42df-a75a-ca6970f8c0bc" name="更改" comment="资源和资源加载器实现">
+      <change afterPath="$PROJECT_DIR$/src/main/java/beans/factory/support/AbstractBeanDefinitionReader.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/beans/factory/support/BeanDefinitionReader.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/beans/factory/xml/XmlBeanDefinitionReader.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/context/annotation/ClassPathBeanDefinitionScanner.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/context/annotation/ClassPathScanningCandidateComponentProvider.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/context/annotation/Scope.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/stereotype/Component.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/bean/Car.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/bean/Person.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/beans/factory/xml/XmlBeanDefinitionReaderTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/resources/spring.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/beans/factory/support/DefaultListableBeanFactory.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/beans/factory/support/DefaultListableBeanFactory.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/beans/factory/support/DefaultListableBeanFactoryTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/beans/factory/support/DefaultListableBeanFactoryTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -27,8 +28,8 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="Interface" />
-        <option value="Class" />
         <option value="JUnit3 Test Class" />
+        <option value="Class" />
       </list>
     </option>
   </component>
@@ -52,6 +53,7 @@
     "JUnit.DefaultListableBeanFactoryTest.testCreateListableBeanFactory.executor": "Debug",
     "JUnit.DefaultListableBeanFactoryTest.testPopulateBeanWithPropertyValues.executor": "Run",
     "JUnit.DefaultResourceLoaderTest.testResourceLoader.executor": "Run",
+    "JUnit.XmlBeanDefinitionReaderTest.testXmlFile.executor": "Debug",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "RunOnceActivity.git.unshallow": "true",
     "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary": "JUnit3",
@@ -72,11 +74,12 @@
       <recent name="junit.framework.TestCase" />
     </key>
     <key name="CreateTestDialog.RecentsKey">
+      <recent name="beans.factory.xml" />
       <recent name="core.io" />
       <recent name="beans.factory.support" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.DefaultResourceLoaderTest.testResourceLoader">
+  <component name="RunManager" selected="JUnit.XmlBeanDefinitionReaderTest.testXmlFile">
     <configuration name="DefaultListableBeanFactoryTest.PopulateBeanWithPropertyValues" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="mini-spring" />
       <extension name="coverage">
@@ -88,22 +91,6 @@
       <option name="PACKAGE_NAME" value="beans.factory.support" />
       <option name="MAIN_CLASS_NAME" value="beans.factory.support.DefaultListableBeanFactoryTest" />
       <option name="METHOD_NAME" value="PopulateBeanWithPropertyValues" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="DefaultListableBeanFactoryTest.PopulateBeanWithPropertyValuesTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="mini-spring" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="beans.factory.support.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="beans.factory.support" />
-      <option name="MAIN_CLASS_NAME" value="beans.factory.support.DefaultListableBeanFactoryTest" />
-      <option name="METHOD_NAME" value="PopulateBeanWithPropertyValuesTest" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -157,13 +144,29 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="XmlBeanDefinitionReaderTest.testXmlFile" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="mini-spring" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="beans.factory.xml.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="beans.factory.xml" />
+      <option name="MAIN_CLASS_NAME" value="beans.factory.xml.XmlBeanDefinitionReaderTest" />
+      <option name="METHOD_NAME" value="testXmlFile" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.XmlBeanDefinitionReaderTest.testXmlFile" />
         <item itemvalue="JUnit.DefaultResourceLoaderTest.testResourceLoader" />
         <item itemvalue="JUnit.DefaultListableBeanFactoryTest.testBeanReference" />
         <item itemvalue="JUnit.DefaultListableBeanFactoryTest.testPopulateBeanWithPropertyValues" />
         <item itemvalue="JUnit.DefaultListableBeanFactoryTest.PopulateBeanWithPropertyValues" />
-        <item itemvalue="JUnit.DefaultListableBeanFactoryTest.PopulateBeanWithPropertyValuesTest" />
       </list>
     </recent_temporary>
   </component>
@@ -185,7 +188,9 @@
       <updated>1745309156384</updated>
       <workItem from="1745309157474" duration="4611000" />
       <workItem from="1745629921530" duration="9219000" />
-      <workItem from="1745643011834" duration="3923000" />
+      <workItem from="1745643011834" duration="9201000" />
+      <workItem from="1745678133725" duration="1280000" />
+      <workItem from="1745722287247" duration="4924000" />
     </task>
     <task id="LOCAL-00001" summary="注册bean的流程实现">
       <option name="closed" value="true" />
@@ -211,7 +216,15 @@
       <option name="project" value="LOCAL" />
       <updated>1745639294254</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="资源和资源加载器实现">
+      <option name="closed" value="true" />
+      <created>1745647099324</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1745647099324</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -244,6 +257,18 @@
     <MESSAGE value="注册bean的流程实现" />
     <MESSAGE value="bean的注册实现和测试完成" />
     <MESSAGE value="代理bean实现和创建bean时可以引用其他bean对象" />
-    <option name="LAST_COMMIT_MESSAGE" value="代理bean实现和创建bean时可以引用其他bean对象" />
+    <MESSAGE value="资源和资源加载器实现" />
+    <option name="LAST_COMMIT_MESSAGE" value="资源和资源加载器实现" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/test/java/beans/factory/xml/XmlBeanDefinitionReaderTest.java</url>
+          <line>12</line>
+          <option name="timeStamp" value="2" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>

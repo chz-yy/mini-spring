@@ -1,5 +1,7 @@
 package beans.factory.support;
 
+import bean.Car;
+import bean.Person;
 import beans.PropertyValue;
 import beans.PropertyValues;
 import beans.factory.config.BeanDefinition;
@@ -55,32 +57,8 @@ public class DefaultListableBeanFactoryTest extends TestCase {
     }
 }
 
-class Person {
-    private String name;
-    private int age;
-    private String love;
-    private Car car;
-    public void info() {
-        System.out.println(name+" "+age+" "+love+" "+car.getColor()+" "+car.getEngine()+" "+car.getPerson().love);
-    }
-}
 
-class Car {
-    private String color;
-    private String engine;
 
-    public Person getPerson() {
-        return person;
-    }
-
-    private Person person;
-    public String getColor() {
-        return color;
-    }
-    public String getEngine() {
-        return engine;
-    }
-}
 
 class HelloService {
     public void sayHello() {
