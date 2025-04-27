@@ -3,6 +3,13 @@ public class Car {
     private String color;
     private String engine;
 
+    public void setColor(String color) {
+        this.color = color;
+    }
+    public void setEngine(String engine) {
+        this.engine = engine;
+    }
+
     public Person getPerson() {
         return person;
     }

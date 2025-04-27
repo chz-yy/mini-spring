@@ -15,6 +15,7 @@
 
     <bean id="car" class="bean.Car">
         <property name="color" value="蓝"/>
+        <property name="engine" value="小米"/>
     </bean>
 
 </beans>
