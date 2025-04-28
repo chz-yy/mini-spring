@@ -4,31 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="711a23af-67dc-42df-a75a-ca6970f8c0bc" name="更改" comment="BeanFactoryPostProcessor接口">
-      <change afterPath="$PROJECT_DIR$/src/main/java/beans/factory/Aware.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/context/ApplicationContext.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/context/ApplicationContextAware.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/context/ApplicationEvent.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/context/ApplicationEventPublisher.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/context/ApplicationListener.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/context/ConfigurableApplicationContext.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/context/event/AbstractApplicationEventMulticaster.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/context/event/ApplicationContextEvent.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/context/event/ApplicationEventMulticaster.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/context/event/ContextClosedEvent.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/context/event/ContextRefreshedEvent.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/context/event/SimpleApplicationEventMulticaster.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/context/support/AbstractApplicationContext.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/context/support/AbstractRefreshableApplicationContext.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/context/support/AbstractXmlApplicationContext.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/context/support/ApplicationContextAwareProcessor.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/context/support/ClassPathXmlApplicationContext.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/context/support/ClassPathXmlApplicationContextTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/resources/init-and-destroy-method.xml" afterDir="false" />
+    <list default="true" id="711a23af-67dc-42df-a75a-ca6970f8c0bc" name="更改" comment="实现应用上下文管理器">
+      <change afterPath="$PROJECT_DIR$/src/test/java/Service/HelloService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/context/ApplicationContextAwareTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/beans/factory/BeanFactoryAware.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/beans/factory/BeanFactoryAware.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/beans/factory/support/AbstractAutowireCapableBeanFactory.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/beans/factory/support/AbstractAutowireCapableBeanFactory.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/bean/Person.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/bean/Person.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/resources/spring.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/resources/spring.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -59,6 +38,7 @@
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
+    "JUnit.ApplicationContextAwareTest.test.executor": "Debug",
     "JUnit.BeanFactoryPostProcessorTest.testBeanFactoryPostProcessor.executor": "Debug",
     "JUnit.BeanFactoryPostProcessorTest.testBeanPostProcessor.executor": "Debug",
     "JUnit.ClassPathXmlApplicationContextTest.testClassPathXmlApplicationContext.executor": "Run",
@@ -76,7 +56,7 @@
     "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit3": "junit.framework.TestCase",
     "git-widget-placeholder": "main",
     "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "D:/JavaFile/mini-spring-orgin/mini-spring",
+    "last_opened_file_path": "D:/JavaFile/mini-spring",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -90,14 +70,30 @@
       <recent name="junit.framework.TestCase" />
     </key>
     <key name="CreateTestDialog.RecentsKey">
+      <recent name="context" />
       <recent name="context.support" />
       <recent name="beans.factory.config" />
       <recent name="beans.factory.xml" />
       <recent name="core.io" />
-      <recent name="beans.factory.support" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.ClassPathXmlApplicationContextTest.testInitAndDestroyMethod">
+  <component name="RunManager" selected="JUnit.ApplicationContextAwareTest.test">
+    <configuration name="ApplicationContextAwareTest.test" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="mini-spring" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="context.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="context" />
+      <option name="MAIN_CLASS_NAME" value="context.ApplicationContextAwareTest" />
+      <option name="METHOD_NAME" value="test" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="BeanFactoryPostProcessorTest.testBeanFactoryPostProcessor" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="mini-spring" />
       <extension name="coverage">
@@ -162,29 +158,13 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="XmlBeanDefinitionReaderTest.testXmlFile" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="mini-spring" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="beans.factory.xml.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="beans.factory.xml" />
-      <option name="MAIN_CLASS_NAME" value="beans.factory.xml.XmlBeanDefinitionReaderTest" />
-      <option name="METHOD_NAME" value="testXmlFile" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.ApplicationContextAwareTest.test" />
         <item itemvalue="JUnit.ClassPathXmlApplicationContextTest.testInitAndDestroyMethod" />
         <item itemvalue="JUnit.ClassPathXmlApplicationContextTest.testClassPathXmlApplicationContext" />
         <item itemvalue="JUnit.BeanFactoryPostProcessorTest.testBeanPostProcessor" />
         <item itemvalue="JUnit.BeanFactoryPostProcessorTest.testBeanFactoryPostProcessor" />
-        <item itemvalue="JUnit.XmlBeanDefinitionReaderTest.testXmlFile" />
       </list>
     </recent_temporary>
   </component>
@@ -210,6 +190,7 @@
       <workItem from="1745678133725" duration="1280000" />
       <workItem from="1745722287247" duration="17944000" />
       <workItem from="1745804200789" duration="7270000" />
+      <workItem from="1745822962948" duration="2843000" />
     </task>
     <task id="LOCAL-00001" summary="注册bean的流程实现">
       <option name="closed" value="true" />
@@ -259,7 +240,15 @@
       <option name="project" value="LOCAL" />
       <updated>1745738940949</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="实现应用上下文管理器">
+      <option name="closed" value="true" />
+      <created>1745823028459</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1745823028459</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -295,7 +284,8 @@
     <MESSAGE value="资源和资源加载器实现" />
     <MESSAGE value="在xml文件中定义bean,读取并创建bean" />
     <MESSAGE value="BeanFactoryPostProcessor接口" />
-    <option name="LAST_COMMIT_MESSAGE" value="BeanFactoryPostProcessor接口" />
+    <MESSAGE value="实现应用上下文管理器" />
+    <option name="LAST_COMMIT_MESSAGE" value="实现应用上下文管理器" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -304,6 +294,11 @@
           <url>file://$PROJECT_DIR$/src/test/java/beans/factory/xml/XmlBeanDefinitionReaderTest.java</url>
           <line>12</line>
           <option name="timeStamp" value="2" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/context/support/AbstractApplicationContext.java</url>
+          <line>81</line>
+          <option name="timeStamp" value="8" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
