@@ -25,6 +25,15 @@ public class Person {
         System.out.println(name+" "+age+" "+love+" "+car.getColor()+" "+car.getEngine()+" "+car.getPerson().love);
     }
 
+    public void customInitMethod() {
+        System.out.println("I was born in the method named customInitMethod");
+    }
+
+    public void customDestroyMethod() {
+        System.out.println("I died in the method named customDestroyMethod");
+    }
+
+
     @Override
     public String toString() {
         return name+" love "+love;

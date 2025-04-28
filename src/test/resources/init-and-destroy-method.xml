@@ -6,20 +6,12 @@
 	         http://www.springframework.org/schema/beans/spring-beans.xsd
 		 http://www.springframework.org/schema/context
 		 http://www.springframework.org/schema/context/spring-context-4.0.xsd">
-
-    <bean id="person" class="bean.Person">
-        <property name="name" value="chz"/>
-        <property name="love" value="yy"/>
-        <property name="car" ref="car"/>
+    <bean id="person" class="bean.Person" init-method="customInitMethod" destroy-method="customDestroyMethod">
+        <property name="name" value="chz2"/>
+        <property name="love" value="yy2"/>
     </bean>
 
     <bean id="car" class="bean.Car">
-        <property name="color" value="蓝"/>
-        <property name="engine" value="小米"/>
+        <property name="color" value="紫"/>
     </bean>
-
-    <bean class="common.CustomBeanFactoryPostProcessor"/>
-
-    <bean class="common.CustomerBeanPostProcessor"/>
-
 </beans>
