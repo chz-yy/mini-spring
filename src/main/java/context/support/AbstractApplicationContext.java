@@ -6,6 +6,7 @@ import beans.factory.config.BeanFactoryPostProcessor;
 import beans.factory.config.BeanPostProcessor;
 import context.ApplicationContextAware;
 import context.ApplicationEvent;
+import context.ApplicationListener;
 import context.ConfigurableApplicationContext;
 import context.event.ApplicationEventMulticaster;
 import context.event.ContextClosedEvent;
@@ -14,6 +15,7 @@ import context.event.SimpleApplicationEventMulticaster;
 import core.ConversionService;
 import core.io.DefaultResourceLoader;
 
+import java.util.Collection;
 import java.util.Map;
 
 public abstract class AbstractApplicationContext extends DefaultResourceLoader implements ConfigurableApplicationContext {
@@ -39,10 +41,20 @@ public abstract class AbstractApplicationContext extends DefaultResourceLoader i
         //初始化事件发布者
         initApplicationEventMulticaster();
 
+        //注册事件监听器
+        registerListeners();
+
         //注册类型转换器和提前实例化单例bean
         finishBeanFactoryInitialization(beanFactory);
         //发布容器刷新完成事件
         finishRefresh();
+    }
+
+    protected void registerListeners() {
+        Collection<ApplicationListener> applicationListeners = getBeansOfType(ApplicationListener.class).values();
+        for (ApplicationListener applicationListener:applicationListeners){
+            applicationEventMulticaster.addApplicationListener(applicationListener);
+        }
     }
 
     private void finishRefresh() {
@@ -144,6 +156,10 @@ public abstract class AbstractApplicationContext extends DefaultResourceLoader i
         getBeanFactory().destroySingletons();
     }
 
+    /**
+     * 通过 Runtime.getRuntime().addShutdownHook(shutdownHook)，向 JVM 注册一个线程（shutdownHook）。
+     * 当 JVM 开始关闭流程时，会触发所有已注册的关闭钩子，并异步执行它们的 run() 方法。
+     */
     @Override
     public void registerShutdownHook() {
         Thread shutdownHook = new Thread() {
