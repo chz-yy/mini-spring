@@ -4,11 +4,28 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="711a23af-67dc-42df-a75a-ca6970f8c0bc" name="更改" comment="实现应用上下文管理器">
-      <change afterPath="$PROJECT_DIR$/src/test/java/Service/HelloService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/context/ApplicationContextAwareTest.java" afterDir="false" />
+    <list default="true" id="711a23af-67dc-42df-a75a-ca6970f8c0bc" name="更改" comment="实现事件监听">
+      <change afterPath="$PROJECT_DIR$/src/main/java/aop/AdvisedSupport.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/aop/Advisor.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/aop/ClassFilter.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/aop/MethodMatcher.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/aop/Pointcut.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/aop/PointcutAdvisor.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/aop/TargetSource.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/aop/aspectj/AspectJExpressionPointcut.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/aop/aspectj/AspectJExpressionPointcutAdvisor.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/aop/framework/AopProxy.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/aop/framework/CglibAopProxy.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/aop/framework/DefaultAdvisorChainFactory.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/aop/framework/JdkDynamicAopProxy.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/aop/framework/ProxyFactory.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/aop/framework/ReflectiveMethodInvocation.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/Service/WorldService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/Service/WorldServiceImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/aop/DynamicProxyTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/aop/PointcutExpressionTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/resources/spring.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/resources/spring.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -18,9 +35,9 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
+        <option value="JUnit3 Test Class" />
         <option value="Interface" />
         <option value="Class" />
-        <option value="JUnit3 Test Class" />
       </list>
     </option>
   </component>
@@ -50,18 +67,23 @@
     "JUnit.DefaultListableBeanFactoryTest.testPopulateBeanWithPropertyValues.executor": "Run",
     "JUnit.DefaultResourceLoaderTest.testResourceLoader.executor": "Run",
     "JUnit.XmlBeanDefinitionReaderTest.testXmlFile.executor": "Debug",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "RunOnceActivity.git.unshallow": "true",
+    "WebServerToolWindowFactoryState": "false",
     "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary": "JUnit3",
     "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit3": "junit.framework.TestCase",
     "git-widget-placeholder": "main",
     "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "D:/JavaFile/mini-spring",
+    "last_opened_file_path": "E:/javafile/origin-mini-spring",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
     "node.js.selected.package.tslint": "(autodetect)",
     "nodejs_package_manager_path": "npm",
+    "project.structure.last.edited": "SDK",
+    "project.structure.proportion": "0.0",
+    "project.structure.side.proportion": "0.2",
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
@@ -77,7 +99,7 @@
       <recent name="core.io" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.ApplicationContextAwareTest.test">
+  <component name="RunManager" selected="JUnit.PointcutExpressionTest.testPointcutExpression">
     <configuration name="ApplicationContextAwareTest.test" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="mini-spring" />
       <extension name="coverage">
@@ -89,38 +111,6 @@
       <option name="PACKAGE_NAME" value="context" />
       <option name="MAIN_CLASS_NAME" value="context.ApplicationContextAwareTest" />
       <option name="METHOD_NAME" value="test" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="BeanFactoryPostProcessorTest.testBeanFactoryPostProcessor" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="mini-spring" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="common.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="beans.factory.config" />
-      <option name="MAIN_CLASS_NAME" value="beans.factory.config.BeanFactoryPostProcessorTest" />
-      <option name="METHOD_NAME" value="testBeanFactoryPostProcessor" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="BeanFactoryPostProcessorTest.testBeanPostProcessor" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="mini-spring" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="beans.factory.config.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="beans.factory.config" />
-      <option name="MAIN_CLASS_NAME" value="beans.factory.config.BeanFactoryPostProcessorTest" />
-      <option name="METHOD_NAME" value="testBeanPostProcessor" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -158,13 +148,45 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="EventAndEventListenerTest.testEventListener" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="mini-spring" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="context.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="context" />
+      <option name="MAIN_CLASS_NAME" value="context.EventAndEventListenerTest" />
+      <option name="METHOD_NAME" value="testEventListener" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="PointcutExpressionTest.testPointcutExpression" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="mini-spring" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="aop.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="iop" />
+      <option name="MAIN_CLASS_NAME" value="aop.PointcutExpressionTest" />
+      <option name="METHOD_NAME" value="testPointcutExpression" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.PointcutExpressionTest.testPointcutExpression" />
+        <item itemvalue="JUnit.EventAndEventListenerTest.testEventListener" />
         <item itemvalue="JUnit.ApplicationContextAwareTest.test" />
         <item itemvalue="JUnit.ClassPathXmlApplicationContextTest.testInitAndDestroyMethod" />
         <item itemvalue="JUnit.ClassPathXmlApplicationContextTest.testClassPathXmlApplicationContext" />
-        <item itemvalue="JUnit.BeanFactoryPostProcessorTest.testBeanPostProcessor" />
-        <item itemvalue="JUnit.BeanFactoryPostProcessorTest.testBeanFactoryPostProcessor" />
       </list>
     </recent_temporary>
   </component>
@@ -191,6 +213,7 @@
       <workItem from="1745722287247" duration="17944000" />
       <workItem from="1745804200789" duration="7270000" />
       <workItem from="1745822962948" duration="2843000" />
+      <workItem from="1748313594575" duration="12784000" />
     </task>
     <task id="LOCAL-00001" summary="注册bean的流程实现">
       <option name="closed" value="true" />
@@ -248,7 +271,15 @@
       <option name="project" value="LOCAL" />
       <updated>1745823028459</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="实现事件监听">
+      <option name="closed" value="true" />
+      <created>1748317086236</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1748317086236</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -285,7 +316,8 @@
     <MESSAGE value="在xml文件中定义bean,读取并创建bean" />
     <MESSAGE value="BeanFactoryPostProcessor接口" />
     <MESSAGE value="实现应用上下文管理器" />
-    <option name="LAST_COMMIT_MESSAGE" value="实现应用上下文管理器" />
+    <MESSAGE value="实现事件监听" />
+    <option name="LAST_COMMIT_MESSAGE" value="实现事件监听" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -297,8 +329,8 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/context/support/AbstractApplicationContext.java</url>
-          <line>81</line>
-          <option name="timeStamp" value="8" />
+          <line>41</line>
+          <option name="timeStamp" value="10" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
