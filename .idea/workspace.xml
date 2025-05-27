@@ -5,27 +5,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="711a23af-67dc-42df-a75a-ca6970f8c0bc" name="更改" comment="实现事件监听">
-      <change afterPath="$PROJECT_DIR$/src/main/java/aop/AdvisedSupport.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/aop/Advisor.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/aop/ClassFilter.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/aop/MethodMatcher.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/aop/Pointcut.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/aop/PointcutAdvisor.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/aop/TargetSource.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/aop/aspectj/AspectJExpressionPointcut.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/aop/aspectj/AspectJExpressionPointcutAdvisor.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/aop/framework/AopProxy.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/aop/framework/CglibAopProxy.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/aop/framework/DefaultAdvisorChainFactory.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/aop/framework/JdkDynamicAopProxy.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/aop/framework/ProxyFactory.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/aop/framework/ReflectiveMethodInvocation.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/Service/WorldService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/Service/WorldServiceImpl.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/aop/DynamicProxyTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/aop/PointcutExpressionTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/aop/AfterAdvice.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/aop/AfterReturningAdvice.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/Service/WorldServiceAfterReturnAdvice.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/aop/framework/adapter/AfterReturningAdviceInterceptor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/aop/framework/adapter/AfterReturningAdviceInterceptor.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/aop/DynamicProxyTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/aop/DynamicProxyTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -66,6 +51,8 @@
     "JUnit.DefaultListableBeanFactoryTest.testCreateListableBeanFactory.executor": "Debug",
     "JUnit.DefaultListableBeanFactoryTest.testPopulateBeanWithPropertyValues.executor": "Run",
     "JUnit.DefaultResourceLoaderTest.testResourceLoader.executor": "Run",
+    "JUnit.DynamicProxyTest.executor": "Run",
+    "JUnit.DynamicProxyTest.testJdkDynamicProxy.executor": "Debug",
     "JUnit.XmlBeanDefinitionReaderTest.testXmlFile.executor": "Debug",
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
@@ -99,7 +86,7 @@
       <recent name="core.io" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.PointcutExpressionTest.testPointcutExpression">
+  <component name="RunManager" selected="JUnit.DynamicProxyTest.testJdkDynamicProxy">
     <configuration name="ApplicationContextAwareTest.test" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="mini-spring" />
       <extension name="coverage">
@@ -116,33 +103,32 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="ClassPathXmlApplicationContextTest.testClassPathXmlApplicationContext" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="DynamicProxyTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="mini-spring" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="context.support.*" />
+          <option name="PATTERN" value="aop.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="context.support" />
-      <option name="MAIN_CLASS_NAME" value="context.support.ClassPathXmlApplicationContextTest" />
-      <option name="METHOD_NAME" value="testClassPathXmlApplicationContext" />
-      <option name="TEST_OBJECT" value="method" />
+      <option name="PACKAGE_NAME" value="aop" />
+      <option name="MAIN_CLASS_NAME" value="aop.DynamicProxyTest" />
+      <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="ClassPathXmlApplicationContextTest.testInitAndDestroyMethod" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="DynamicProxyTest.testJdkDynamicProxy" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="mini-spring" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="context.support.*" />
+          <option name="PATTERN" value="aop.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="context.support" />
-      <option name="MAIN_CLASS_NAME" value="context.support.ClassPathXmlApplicationContextTest" />
-      <option name="METHOD_NAME" value="testInitAndDestroyMethod" />
+      <option name="PACKAGE_NAME" value="aop" />
+      <option name="MAIN_CLASS_NAME" value="aop.DynamicProxyTest" />
+      <option name="METHOD_NAME" value="testJdkDynamicProxy" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -182,11 +168,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.DynamicProxyTest.testJdkDynamicProxy" />
+        <item itemvalue="JUnit.DynamicProxyTest" />
         <item itemvalue="JUnit.PointcutExpressionTest.testPointcutExpression" />
         <item itemvalue="JUnit.EventAndEventListenerTest.testEventListener" />
         <item itemvalue="JUnit.ApplicationContextAwareTest.test" />
-        <item itemvalue="JUnit.ClassPathXmlApplicationContextTest.testInitAndDestroyMethod" />
-        <item itemvalue="JUnit.ClassPathXmlApplicationContextTest.testClassPathXmlApplicationContext" />
       </list>
     </recent_temporary>
   </component>
@@ -331,6 +317,11 @@
           <url>file://$PROJECT_DIR$/src/main/java/context/support/AbstractApplicationContext.java</url>
           <line>41</line>
           <option name="timeStamp" value="10" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/test/java/aop/DynamicProxyTest.java</url>
+          <line>32</line>
+          <option name="timeStamp" value="17" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
